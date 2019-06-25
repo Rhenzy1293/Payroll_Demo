@@ -1,0 +1,65 @@
+﻿<mahapps:MetroWindow x:Class="Payroll_Demo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:mahapps="http://metro.mahapps.com/winfx/xaml/controls"
+        xmlns:local="clr-namespace:Payroll_Demo"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525"
+                     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+                     xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks">
+    <Grid>
+        <materialDesign:DrawerHost Name="DrawerHost1" IsTopDrawerOpen="True" >
+            <materialDesign:DrawerHost.TopDrawerContent >
+                <Grid Width="300" Height="350" Margin="10">
+                    <StackPanel>
+                        <TextBlock Text="Menu" FontSize="25" Margin="10" FontWeight="Light"/>
+
+                        <Button Name="menuItem_UserMaintenance" HorizontalContentAlignment="Left" Padding="10" Style="{DynamicResource MaterialDesignFlatButton}" Height="Auto" Click="menuItem_UserMaintenance_Click">
+                            <StackPanel Orientation="Horizontal">
+                                <iconPacks:PackIconMaterial Kind="Account"/>
+                                <TextBlock Text="User Maintenance" Margin="8,0,0,0"/>
+                            </StackPanel>
+                        </Button>
+
+                        <Button Name="menuItem_PayrollEntries" HorizontalContentAlignment="Left" Padding="10" Style="{DynamicResource MaterialDesignFlatButton}" Height="Auto" Click="menuItem_PayrollEntries_Click">
+                            <StackPanel Orientation="Horizontal">
+                                <iconPacks:PackIconMaterial Kind="Newspaper"/>
+                                <TextBlock Text="Payroll Entries" Margin="8,0,0,0"/>
+                            </StackPanel>
+                        </Button>
+                        <RadioButton/>
+                        <Button Style="{DynamicResource MetroCircleButtonStyle}" Height="55" Margin="0,0,246,0">
+                            <iconPacks:Material Kind="AccessPointNetwork"/>
+                        </Button>
+                    
+
+                    </StackPanel>
+                </Grid>
+            </materialDesign:DrawerHost.TopDrawerContent>
+
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Grid Name="TopBar" Grid.Row="0" Height="48">
+                    <Border Background="{DynamicResource AccentColorBrush}"/>
+                   
+                    <StackPanel Orientation="Horizontal">
+                        <Button Name="Button_ShowMenu" Width="48" Foreground="White" Height="48" Style="{DynamicResource MaterialDesignToolButton}" Click="Button_ShowMenu_Click">
+                            <iconPacks:Material Kind="Menu"/>
+                        </Button>
+                    </StackPanel>
+                </Grid>
+
+                <mahapps:TransitioningContentControl Name="MainContent" Grid.Row="1">
+                    
+                </mahapps:TransitioningContentControl>
+            </Grid>
+        </materialDesign:DrawerHost>
+    </Grid>
+</mahapps:MetroWindow>
